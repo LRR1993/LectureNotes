@@ -45,3 +45,40 @@ projects
 1. write a specfication for the project
     used to test the actual code
 2. write a sciptt (actual code)
+
+example spec
+```js
+const { expect } = require('chai');
+const fizzBuzz = require('../fizzBuzz');
+
+describe('fizzBuzz', () => {
+  it('returns n when n is not divisible by 3 or 5', () => {
+    expect(fizzBuzz(1)).to.equal(1);
+    expect(fizzBuzz(2)).to.equal(2);
+  });
+  it('returns "fizz" when n is divisble by 3', () => {
+    expect(fizzBuzz(3)).to.equal('fizz');
+    expect(fizzBuzz(6)).to.equal('fizz');
+  });
+  it('returns "buzz" when n is divisble by 5', () => {
+    expect(fizzBuzz(5)).to.equal('buzz');
+    expect(fizzBuzz(10)).to.equal('buzz');
+  });
+  it('returns "fizzbuzz" when input is divisible by 3 and 5', () => {
+    expect(fizzBuzz(15)).to.equal('fizzbuzz');
+    expect(fizzBuzz(30)).to.equal('fizzbuzz');
+  });
+});
+```
+
+example code
+```js
+const fizzBuzz = n => {
+  if (n % 15 === 0) return 'fizzbuzz';
+  if (n % 3 === 0) return 'fizz';
+  if (n % 5 === 0) return 'buzz';
+  return n;
+};
+
+module.exports = fizzBuzz;
+```
