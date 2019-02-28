@@ -17,7 +17,6 @@ git push -u origin master
 ```
 
 push changes to origin master
-
 ```js
 git push -u origin master
 //Pushes the changes in your local repository up to the remote repository you specified as the origin
