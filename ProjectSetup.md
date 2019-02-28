@@ -5,7 +5,7 @@ Pair programming
 Project Setup
 ... package json - recpiet of eveything thats needed
 1. npm install mocha/chai
-2. .gitignore - config.js, node_modules
+2. .gitignore - config.js, node_modules - dont want to upload all the modeules to github use package.json instead
 3. git init, git status, git commit, git push 
 
 Testing
@@ -35,7 +35,7 @@ describe('sum', () => {
     it('sums two intergers',()=>{
         const result = sum(2,2)
         expect(result).to.equal(4):
-    }) // test only fail when we add errow to compare it
+    }) // test only fail when we add error to compare it
 })
 ```
 
@@ -80,5 +80,5 @@ const fizzBuzz = n => {
   return n;
 };
 
-module.exports = fizzBuzz;
+module.exports = fizzBuzz; //exports from chai/mocha
 ```
