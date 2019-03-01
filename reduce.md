@@ -1,4 +1,4 @@
-### reduce
+### Reduce
 
 ## Re-cap
 
