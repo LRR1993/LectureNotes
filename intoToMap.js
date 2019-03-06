@@ -9,7 +9,7 @@ const tutors = ['sam', 'mitch', 'bill']
 //const output = tutors.map(function({})) // WILL RETURN A NEW ARRAY OF UNDEFINED
 
 /* breakdown of map
-const output = tutors.map( iteratee)
+const output = tutors.map(iteratee)
 iteratee = (Element, index, array) => { // stuff to mutate and create a new array}
 */
 
