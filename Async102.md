@@ -25,13 +25,14 @@ const { getPizzaById } = require('./ultis/index.js');
 
 const fectchPizzas = function(pizzaIds, getPizzas) {
   const pizzaArr = [];
-  pizzaIds.forEach(pizza =>
+  let count = 0;
+  pizzaIds.forEach((pizza, index) =>
     getPizzaById(pizza, (err, pizzaInfo) => {
       if (err) {
         getPizzas(err);
       } else {
-        pizzaArr.push(...pizzaInfo);
-        if (pizzaArr.length === pizzaIds.length) getPizzas(null, pizzaArr);
+        pizzaArr[index] = pizza;
+        if (++count === pizzaIds.length) getPizzas(null, pizzaArr);
       }
     })
   );
