@@ -3,7 +3,7 @@
 Servers are software on the internet
 different protocals have a port number - not in use by something else
 
-> REST API - representational, state transfer
+> REST API - representational state transfer
 
 - use HTTP method, CRUD
 - stateless - data is not held on the server
@@ -81,6 +81,58 @@ function writeCats(cats, cb) {
 }
 
 server.listen(9090, err => {
+  if (err) console.log(err);
+  else console.log('server listening on port 9090...');
+});
+```
+
+# Express
+
+- install and require in, is a normal dependency.
+
+- nodemon(node demon) (DEVdep) - allows server to continually run while making changes
+- for post requests install body parser (middleware)
+
+```js
+const express = require('express')
+const app = express()
+//or
+const app = require('express')()
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.json())
+app.get('/',(req,res)=> {
+  res.json({msg: 'Hello World'}) /* more explict (will be json stringify)*/
+})
+
+//server
+app.get('/api/cats', sendAllCats);
+app.get('/api/cats/:cat_id', sendCatById);
+
+module.exports = app;
+
+/// controller
+exports.sendAllCats('/api/cats',(req,res)=> {
+getCats((err,catData)=> {
+  res.status(200).json({catData})
+  })
+})
+
+exports.sendCatById('/api/cats',(req,res)=> {
+  res.status(200).json({msg: `CatId:${req.paramas.cat_id}`}})
+
+})
+//models
+
+exports.addNewCat = (req,res)=> {
+  let newCat = JSON.stringfy(req.body)
+  writeCats(newCat, (err,updatedCats)=>{
+    if err console.log err
+    else res.status(201).json({updatedCats}}
+  })
+}
+//listen (separate file)
+app.listen(9090, err => {
   if (err) console.log(err);
   else console.log('server listening on port 9090...');
 });
