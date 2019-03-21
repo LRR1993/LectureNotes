@@ -42,4 +42,26 @@ function fetchUser ((req,res,next)=> {
 })
 ```
 
-error hireachy - always deal with the client errors first (400 series)
+# Server Structure
+
+**App**
+
+- Create app,
+- High level routing,
+- Uses middle ware, export app
+
+**Listen**
+
+- Invokes app, on correct port
+
+**Model**
+
+- Gather data (DB,API,FS)
+
+**Controller**
+
+- Controls data
+
+**Errors**
+
+- Always deal with the client errors first (400 series)
