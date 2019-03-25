@@ -113,4 +113,11 @@ VALUES
 SELECT * FROM people
 JOIN animals
 ON people.animal_id = animals.animal_id
+
+-- many to many
+SELECT first_name, skill FROM people_skills
+JOIN people
+ON people_skills.people_id = people.people_id
+JOIN skills
+ON people_skills.skill_id = skills.skills_id
 ```
