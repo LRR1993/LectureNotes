@@ -43,8 +43,11 @@ db.query('SELECT * FROM spells;', (err, data) => {
 ```js
 // promises
 db.query('SELECT * FROM spells;')
-  .then(data => console.log(data))
+  .then(data => console.log(data.rows))
+  // returns a new promise - no need to nest callback functions
+  .then() // new promise used in the next chain
   .catch(err => console.log(err))
+  // one catch for all errs
 
 });
 ```
