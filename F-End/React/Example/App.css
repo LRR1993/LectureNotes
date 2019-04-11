@@ -1,0 +1,8 @@
+.App {
+  color: blue;
+  text-align: center;
+}
+
+.complete {
+  text-decoration: line-through;
+}
