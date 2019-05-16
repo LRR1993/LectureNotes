@@ -18,13 +18,26 @@ This will install the following things:
 - [zsh](https://www.postgresql.org/)
 - [oh-my-zsh](https://ohmyz.sh/)
 
+### Install MS TEams
+brew cask install microsoft-teams
+
+### Install skype
+brew cask install skype
+### Install insominia
+
 ### Install slack
+
 ### Install chrome
+brew cask search google-chrome
+brew cask install google-chrome
+
 ### Install Markdown 
 https://chrome.google.com/webstore/detail/markdown-here/elifhakcjgalahccnjkneoccemfahfoa
 
+### Other
+brew cask install mysql
 
-## A Better Terminal Application
+### A Better Terminal Application
 Type the following commands to install a terminal application called Terminator, which allows you to have multiple terminal instances in one window:
 
 $ sudo apt-get update

@@ -23,3 +23,7 @@ beta_settings:
 ./cloud_sql_proxy -dir=/cloudsql -instances=hastapin:europe-west1:hastapin-db \
                   -credential_file=./HASTAPin-ca1f2e166672.json &
 ```
+
+https://github.com/GoogleCloudPlatform/nodejs-docs-samples/tree/master/cloud-sql/mysql/mysql
+
+export SQL_USER=root export SQL_PASSWORD=root export SQL_DATABASE=has_tap_in_api export INSTANCE_CONNECTION_NAME=hastapin:europe-west1:hastapin-db
